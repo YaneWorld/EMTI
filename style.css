@@ -1,0 +1,400 @@
+/* CONFIGURAÇÕES GERAIS E RESETS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #0f2027; /* Azul Escuro Elegante */
+    --secondary-color: #203a43;
+    --accent-color: #f39c12; /* Dourado / Laranja */
+    --light-bg: #f8f9fa;
+    --text-dark: #2d3436;
+    --text-light: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #b2bec3;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(15, 32, 39, 0.8), rgba(32, 58, 67, 0.8)), 
+                url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tag-principal {
+    background-color: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #dfe6e9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* SEÇÃO DE NOTÍCIAS (MURAL) */
+main {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 65px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.tag-1 { background-color: #3498db; }
+.tag-2 { background-color: #9b59b6; }
+.tag-3 { background-color: #e74c3c; }
+
+.card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.card-footer span { color: #b2bec3; }
+.card-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+.card-footer a:hover { color: var(--accent-color); }
+
+/* SEÇÃO DOS ANOS */
+.anos-section {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.anos-section .section-title {
+    color: #fff;
+}
+
+.anos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.ano-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+    transition: background 0.3s;
+}
+
+.ano-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ano-box .number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* SOBRE O EMTI */
+.sobre-section {
+    padding: 80px 0;
+}
+
+.sobre-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.sobre-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.sobre-text p {
+    margin-bottom: 15px;
+    color: #636e72;
+}
+
+.beneficios-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.beneficios-list li {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.text-gold { color: var(--accent-color); margin-right: 10px; }
+
+.sobre-stats {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 160px;
+}
+
+.stat-box h4 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--primary-color);
+    color: #b2bec3;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socials a {
+    color: #b2bec3;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: var(--accent-color);
+}
+
+/* RESPONSIVIDADE (Telas menores) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .ano-box {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
